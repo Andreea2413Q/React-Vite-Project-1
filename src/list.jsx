@@ -15,6 +15,20 @@ const itemArray = [
         costTravel:2000,
     },
 ]
+const [lista, setLista] = useState([2,3,10,14]);
+const [contor,setContor] = useState(50);
+function add(){
+setcontor(contor+1);
+}
+const dec = () => {
+    setContor(contor-1)
+}
+function res(){
+    setContor(0)
+}
+function save(){
+
+}
 
 const itemList = () => {
     const [i, setItemns ] = useState(itemArray)
@@ -39,6 +53,20 @@ const itemList = () => {
 
     return (
         <>
+            <h1> {contor} </h1>
+            <button onclick="{add}" >+</button >
+            <button onclick="{dec}">-</button>
+            <button onclick="{res}">reset</button>
+            <button onclick="{save}">Save</button>
+            <ul>
+                {
+                    lista.map((el) => (
+                        return (
+                  <li >{el}</li>
+                    )
+                        ))
+                }
+            </ul>
         <table className="table table-hover w-75 m-auto">
     <thead>
         <th>
@@ -58,6 +86,7 @@ const itemList = () => {
         <div className="clear-fix">
         <button className="btn btn-primary px-3 w-25 float-right" onClick={addItems}>New</button>
         </div>
+            
         </>
     )
 }
